@@ -70,7 +70,7 @@ while True: # run everything inside this codeblock endlessly until we encounter 
     count = 0               
 
     time.sleep(60)
-    if timesran == 12:
+    if timesran == 60: #decided to tally it every minute for 1 hour since there wouldnt be much of a difference in 12 minutes
         #Place in a function that pushes the finaldata array to a .json file
         print(finaldata)
         with open(candlejson, 'w') as f:
