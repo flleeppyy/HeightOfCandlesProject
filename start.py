@@ -37,7 +37,7 @@ while True: # run everything inside this codeblock endlessly until we encounter 
 
 
     
-    #cv2.imshow('original', frame) #Create the window with the original image
+    cv2.imshow('original', frame) #Create the window with the original image
     #cv2.imshow('#1 grayscale image', gray) #Create a window with the grayscaled image
     #cv2.imshow('#2 grayscale with threshold', thresh1) #Create a window with the grayscaled image and a threshold for brightness
     #cv2.imshow('#3 cropped image', cropped) #Create a window with the cropped images of both the grayscale and threshold
@@ -61,19 +61,20 @@ while True: # run everything inside this codeblock endlessly until we encounter 
 
     timesran +=1
     timesranstring = str(timesran) + "m"
-
+    print(timesranstring + ": " + str(count))
+        
     count -=10 # Subtract 10 from the final count value so its the floor where the green line is
     #print(count) 
-    finaldata.update({timesranstring:count})
-    print(finaldata)
+    finaldata.update({timesranstring: count})
+    
     count = 0               
 
-    #time.sleep(1)
-    if timesran == 99999999999999999999:
+    time.sleep(60)
+    if timesran == 12:
         #Place in a function that pushes the finaldata array to a .json file
-        
+        print(finaldata)
         with open(candlejson, 'w') as f:
-            json.dump(finaldata, f, sort_keys=True, indent=4)  # write back to file
+            json.dump(finaldata, f,  indent=4)  # write back to file
         break
 
     
