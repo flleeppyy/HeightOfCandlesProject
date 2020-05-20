@@ -7,7 +7,7 @@ import os # system functions and stuff
 import json
 
 true = True
-candlejson = "candle1.json"
+candlejson = "candle1-part3.json"
 #This was scrapped
 #candlejson = input("Please give an empty or non-existent json file to push the final data to (ex: candle1.json) > ")
 #def defineagain():
@@ -61,7 +61,7 @@ while True: # run everything inside this codeblock endlessly until we encounter 
 
     timesran +=1
     timesranstring = str(timesran) + "m"
-    print(timesranstring + ": " + str(count))
+    print(timesranstring + ": " + str(count) + "px")
         
     count -=10 # Subtract 10 from the final count value so its the floor where the green line is
     #print(count) 
@@ -69,6 +69,7 @@ while True: # run everything inside this codeblock endlessly until we encounter 
     
     count = 0               
 
+    
     time.sleep(60)
     if timesran == 60: #decided to tally it every minute for 1 hour since there wouldnt be much of a difference in 12 minutes
         #Place in a function that pushes the finaldata array to a .json file
